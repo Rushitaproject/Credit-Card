@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/iv_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back_btn"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_19ssp"
+            android:text="@string/credit_score_offline_txt"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/opensans_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/iv_next_btn"
+        app:layout_constraintTop_toBottomOf="@id/iv_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/button_bg"
+                    android:padding="@dimen/_15sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_regular"
+                        android:text="@string/last_negative_item"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/background_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_medium"
+                            android:text="@string/last_negative_item_bar_min"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/last_negative_item_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="7"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="15dp"
+                            app:isb_tick_marks_color="@color/seek_round_color"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_ticks_count="8"
+                            app:isb_track_background_color="@color/black"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/last_negative_item_bar_max"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/last_negative_item_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_medium"
+                        android:gravity="center"
+                        android:text="@string/last_negative_item_default"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/button_bg"
+                    android:padding="@dimen/_15sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@string/count_following_accounts"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/background_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/credit_cards"
+                            android:textSize="@dimen/_13ssp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/credit_cards_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="1"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="6"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/black"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:id="@+id/credit_cards_value"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/count_following_accounts_default"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/mortgages"
+                            android:textSize="@dimen/_13ssp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/mortgages_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="1"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="6"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/black"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:id="@+id/mortgages_value"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/count_following_accounts_default"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/retail_finances"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/retail_finances_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="1"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="6"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/black"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:id="@+id/retail_finances_value"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/count_following_accounts_default"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/auto_loans"
+                            android:textSize="@dimen/_13ssp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/auto_loans_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="1"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="6"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/black"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:id="@+id/auto_loans_value"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/count_following_accounts_default"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/student_loans"
+                            android:textSize="@dimen/_13ssp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/student_loans_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="1"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="6"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/black"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:id="@+id/student_loans_value"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/count_following_accounts_default"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/other_loans"
+                            android:textSize="@dimen/_13ssp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/other_loans_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="1"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="6"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/black"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:id="@+id/other_loans_value"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/count_following_accounts_default"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+                </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/iv_next_btn"
+        android:layout_width="match_parent"
+           android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/ic_btn_bg"
+        android:layout_marginHorizontal="@dimen/_50sdp"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:fontFamily="@font/opensans_bold"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

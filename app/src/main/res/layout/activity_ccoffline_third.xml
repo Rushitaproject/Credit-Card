@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/iv_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back_btn"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_19ssp"
+            android:text="@string/credit_score_offline_txt"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/opensans_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/iv_next_btn"
+        app:layout_constraintTop_toBottomOf="@id/iv_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/button_bg"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@string/apply_credit"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/background_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/apply_credit_bar_min"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/apply_credit_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="0"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="10"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/bg_color"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/apply_credit_bar_max"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/apply_credit_limits_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="center"
+                        android:text="@string/apply_credit_default_value"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/button_bg"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@string/first_open_oldest_active"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/background_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/first_open_oldest_active_bar_min"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/first_open_oldest_active_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="0"
+                            app:isb_indicator_color="@color/background_color"
+                            app:isb_indicator_text_color="@color/white"
+                            app:isb_indicator_text_size="18sp"
+                            app:isb_max="10"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="0"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_marks_type="oval"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/seek_round_color"
+                            app:isb_thumb_size="20dp"
+                            app:isb_tick_marks_size="13dp"
+                            app:isb_tick_texts_color="@color/background_color"
+                            app:isb_tick_texts_size="15sp"
+                            app:isb_track_background_color="@color/bg_color"
+                            app:isb_track_background_size="40dp"
+                            app:isb_track_progress_color="@color/text_color"
+                            app:isb_track_progress_size="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="@string/first_open_oldest_active_bar_max"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/first_open_oldest_active_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/fist_open_oldest_active_default"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+
+            <ImageView
+                android:id="@+id/native_container2"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:src="@drawable/ic_offline_scroe_online"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/iv_next_btn"
+        android:layout_width="match_parent"
+           android:layout_height="@dimen/_50sdp"
+        android:layout_marginHorizontal="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Estimate Your Score"
+        android:background="@drawable/ic_btn_bg"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
